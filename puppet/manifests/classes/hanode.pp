@@ -26,5 +26,11 @@ class hanode {
     command => "/usr/bin/mysql -u root -e\"GRANT ALL ON *.* TO 'root'@'%';\"",
     unless => "/usr/bin/mysql -u root -e\"SELECT User FROM mysql.user Where User='root' AND Host='%';\" | grep -q root",
   }
+
+	file { "/etc/app1.cnf":
+	  source => "/vagrant/puppet/files/mha/app1.cnf",
+	  mode => 644,
+	  owner => "root",
+	}
 }
 
