@@ -3,6 +3,15 @@ class hanode {
     ensure => present,
   }
 
+  file { "/etc/mysql/conf.d/mha.cnf":
+    require => Package["mysql-server"],
+    content => "[mysqld]\nlog-bin\nbind=0.0.0.0\nread-only\nrelay_log_purge=0",
+    ensure  => "present",
+    owner   => "mysql",
+    group   => "mysql", 
+    notify  => Service["mysql"],
+  }
+
   package { "mha4mysql-node":
     require => [Package["libdbd-mysql-perl"],Exec["download-node-package"]],
     ensure => present,
