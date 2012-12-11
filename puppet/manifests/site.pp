@@ -44,5 +44,9 @@ file { "/root/.ssh/known_hosts":
   owner => "root",
 }
 
+group {
+	'puppet': ensure => 'present';
+}
+
 
 
