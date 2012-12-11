@@ -37,12 +37,6 @@ file { "/root/.ssh/authorized_keys":
   mode => 600,
   owner => "root",
 }
-file { "/root/.ssh/known_hosts":
-  require => File["/root/.ssh"],
-  source => "/vagrant/puppet/files/ssh/known_hosts",
-  mode => 644,
-  owner => "root",
-}
 
 group {
 	'puppet': ensure => 'present';
