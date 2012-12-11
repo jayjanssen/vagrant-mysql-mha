@@ -1,0 +1,5 @@
+I am new to MHA, so this is  just some notes about my experiments here and what I found.
+
+
+Generally, this vagrant install gets you to where you can start at 'Checking SSH Connections' here: http://code.google.com/p/mysql-master-ha/wiki/Tutorial
+
