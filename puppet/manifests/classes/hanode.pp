@@ -18,7 +18,7 @@ class hanode {
   }  
 
   service { "mysql":
-    ensure => "running",
+    ensure => "running", require => [Package['mysql-server']];
   }
 
   exec { "root4all":
